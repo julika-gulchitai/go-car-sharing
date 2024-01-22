@@ -1,33 +1,36 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { getAllCarsThunk } from './operations';
 
-const carsInitialState = {
+// const carsInitialState = {
+//   name: 'cars',
+//   initialState:
+//   redusers: {},
+// };
+const carsSlice = createSlice({
   name: 'cars',
   initialState: {
     items: [],
     isLoading: false,
-    error: null,
+    error: '',
   },
-  redusers: {},
-};
-const carsSlice = createSlice({
-  name: 'cars',
-  initialState: carsInitialState,
-  reducers: {
-    fetchingInProgress(state) {
-      state.isLoading = true;
-    },
-    fetchingSuccess(state, action) {
-      state.isLoading = false;
-      state.error = null;
-      state.items = action.payload;
-      console.log('fetchingSuccess', action.payload);
-    },
-    fetchingError(state, action) {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
+  extraReducers: builder => {
+    builder
+      .addCase(getAllCarsThunk.pending, (state, action) => {
+        state.isLoading = true;
+      })
+      .addCase(getAllCarsThunk.fulfilled, (state, action) => {
+        state.items = action.payload;
+        console.log(state.items);
+        state.isLoading = false;
+        state.error = '';
+      })
+      .addCase(getAllCarsThunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      });
   },
 });
+
 export const { fetchingInProgress, fetchingSuccess, fetchingError } =
   carsSlice.actions;
 export const carsReducer = carsSlice.reducer;
