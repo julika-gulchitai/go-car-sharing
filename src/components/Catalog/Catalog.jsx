@@ -1,17 +1,26 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllCarsThunk } from '../../redux/operations';
-import { selectCars } from '../../redux/selectors';
-import { Wrap } from './CatalogStyled';
+import { selectCars, selectIsLoading } from '../../redux/selectors';
+import { Wrap, ButtonMore } from './CatalogStyled';
 import Car from './Car';
 
 const Catalog = () => {
-  const cars = useSelector(selectCars);
-  console.log(cars);
   const dispatch = useDispatch();
+  const [page, setPage] = useState(1);
+  const isLogged = useSelector(selectIsLoading);
+
   useEffect(() => {
-    dispatch(getAllCarsThunk());
-  }, [dispatch]);
+    dispatch(getAllCarsThunk(page));
+    setPage(page + 1);
+  }, [dispatch, page, isLogged]);
+
+  const cars = useSelector(selectCars);
+
+  const hanleLoadMore = () => {
+    setPage(page + 1);
+    dispatch(getAllCarsThunk(page));
+  };
 
   return (
     <>
@@ -19,9 +28,9 @@ const Catalog = () => {
         {cars?.map((car, index) => {
           return <Car key={index} car={car} />;
         })}
-
-        {/* <Sorry>Sorry! No cars for your request</Sorry> */}
-        <button type="button">Load more</button>
+        <ButtonMore type="button" onClick={hanleLoadMore}>
+          Load more
+        </ButtonMore>
       </Wrap>
     </>
   );

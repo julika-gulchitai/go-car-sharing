@@ -13,6 +13,9 @@ export const ButtonBig = styled.button`
   background: var(--button);
   border: 0;
   cursor: pointer;
+  &:hover {
+    background: var(--accent-button);
+  }
 `;
 export const ButtonSearch = styled.button`
   display: flex;
@@ -26,4 +29,7 @@ padding: 14px 44px;
   border: 0;
   background: var(--button);
   cursor: pointer;
+  &:hover {
+    background: var(--accent-button);
+  }
 `;

@@ -10,17 +10,10 @@
   --accent-filter: #f7f7fb;
 
   --main-text: #121417;
-  --accent-descr-text: rgba(18, 20, 23, 0.5);
+  --accent-text: rgba(18, 20, 23, 0.5);
   --accent-text-tr: rgba(18, 20, 23, 0.1);
 
   --modal-img-bg: #f3f3f2;
   --modal-accent-bg: #f9f9f9;
   --modal-accent-text: #363535;
-
-  --image-card: linear-gradient(
-      180deg,
-      rgba(18, 20, 23, 0.5) 2.5%,
-      rgba(18, 20, 23, 0) 41.07%
-    ),
-    lightgray 50%;
 }

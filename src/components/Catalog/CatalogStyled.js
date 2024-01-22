@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 export const StyledLi = styled.li`
   width: 274px;
-  height: 382px;
-  background-color: #fff;
+  height: 382px
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -62,11 +61,23 @@ export const Title = styled.div`
 `;
 
 export const Text = styled.p`
-  color: rgba(18, 20, 23, 0.5);
+  color: var(--accent-text);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
   text-align: justify;
   margin-bottom: 28px;
+`;
+export const ButtonMore = styled.button`
+  color: var(--button);
+  background: var(--white);
+  border: 0;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration-line: underline;
+  cursor: pointer;
+  &:hover {
+    color: var(--accent-button);
+  }
 `;
