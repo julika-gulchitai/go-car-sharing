@@ -4,7 +4,7 @@ import FavoriteCars from '../pages/FavoriteCars';
 import Home from '../pages/Home';
 import Layout from './Layout/Layout';
 import NotFound from '../pages/NotFound';
-import CatalogCars from '../pages/CatalogCars';
+import CatalogCars from '../pages/CatalogCars/CatalogCars';
 
 const App = () => {
   return (

@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllCarsThunk } from '../../redux/operations';
 import { selectCars } from '../../redux/selectors';
+import { Wrap } from './CatalogStyled';
+import Car from './Car';
 
 const Catalog = () => {
   const cars = useSelector(selectCars);
@@ -12,19 +14,16 @@ const Catalog = () => {
   }, [dispatch]);
 
   return (
-    <div>
-      {cars.length ? (
-        cars.map(item => (
-          <li key={item.id}>
-            <img src={item.img} width={320} alt={item.type} />
-            <p>{item.make}</p>
-            <p>{item.years}</p>{' '}
-          </li>
-        ))
-      ) : (
-        <p>No cars for your request</p>
-      )}
-    </div>
+    <>
+      <Wrap>
+        {cars?.map((car, index) => {
+          return <Car key={index} car={car} />;
+        })}
+
+        {/* <Sorry>Sorry! No cars for your request</Sorry> */}
+        <button type="button">Load more</button>
+      </Wrap>
+    </>
   );
 };
 
