@@ -1,24 +1,38 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import {
+  StyledHeader,
+  StyledNav,
+  Wrap,
+  StyledNavLink,
+  StyledLogo,
+} from './LayoutStyled';
+import Logo from 'components/Logo/Logo';
 
 const Layout = () => {
   return (
-    <div>
-      <header>
-        <nav>
-          <NavLink style={{ color: '#010101', size: 20 }} to={'/'}>
-            car
-          </NavLink>
+    <>
+      <StyledHeader>
+        <Wrap>
+          <StyledNav>
+            <StyledLogo>
+              {' '}
+              <NavLink to="/">
+                <Logo />
+              </NavLink>
+              go car sharing!
+            </StyledLogo>
 
-          <NavLink to={'/'}>Home</NavLink>
-          <NavLink to={'/catalog'}>Catalog</NavLink>
-          <NavLink to={'/favorites'}>Favorites</NavLink>
-        </nav>
-      </header>
+            <StyledNavLink to={'/'}>Home</StyledNavLink>
+            <StyledNavLink to={'/catalog'}>Car Catalog</StyledNavLink>
+            <StyledNavLink to={'/favorites'}>Favorites</StyledNavLink>
+          </StyledNav>
+        </Wrap>
+      </StyledHeader>
       <div>
         <Outlet />
       </div>
-    </div>
+    </>
   );
 };
 

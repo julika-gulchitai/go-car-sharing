@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getAllCarsThunk } from './operations';
+import { toast } from 'react-toastify';
 
 const carsSlice = createSlice({
   name: 'cars',
@@ -11,6 +12,7 @@ const carsSlice = createSlice({
     page: 1,
     isLoading: false,
     isModalOpen: false,
+    favorite: [],
     error: '',
   },
   reducers: {
@@ -23,7 +25,18 @@ const carsSlice = createSlice({
     modalCar: (state, { payload }) => {
       state.modal.car = payload;
     },
+    addToFavorites: (state, { payload }) => {
+      state.favItems.push(payload);
+      toast.success(
+        `${payload.make} ${payload.model} is added to "Favorites"!`
+      );
+    },
+    removeFromFavorites: (state, { payload }) => {
+      state.favItems = state.favItems.filter(item => item.id !== payload);
+      toast.info(`The car is removed from "Favorites"!`);
+    },
   },
+
   extraReducers: builder => {
     builder
       .addCase(getAllCarsThunk.pending, (state, action) => {

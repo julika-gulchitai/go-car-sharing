@@ -81,3 +81,12 @@ export const ButtonMore = styled.button`
     color: var(--accent-button);
   }
 `;
+export const StyledFavBtn = styled.button`
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  outline: transparent;
+  border: none;
+  background-color: transparent;
+  fill: transparent;
+`;
