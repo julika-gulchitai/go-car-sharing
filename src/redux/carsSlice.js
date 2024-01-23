@@ -1,17 +1,28 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getAllCarsThunk } from './operations';
 
-// const carsInitialState = {
-//   name: 'cars',
-//   initialState:
-//   redusers: {},
-// };
 const carsSlice = createSlice({
   name: 'cars',
   initialState: {
     items: [],
+    modal: {
+      car: {},
+    },
+    page: 1,
     isLoading: false,
+    isModalOpen: false,
     error: '',
+  },
+  reducers: {
+    loadMore: (state, { payload }) => {
+      state.page = payload;
+    },
+    modalOpen: (state, { payload }) => {
+      state.isModalOpen = payload;
+    },
+    modalCar: (state, { payload }) => {
+      state.modal.car = payload;
+    },
   },
   extraReducers: builder => {
     builder
@@ -31,6 +42,5 @@ const carsSlice = createSlice({
   },
 });
 
-export const { fetchingInProgress, fetchingSuccess, fetchingError } =
-  carsSlice.actions;
+export const { modalOpen, modalCar, loadMore } = carsSlice.actions;
 export const carsReducer = carsSlice.reducer;
