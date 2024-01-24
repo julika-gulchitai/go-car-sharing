@@ -4,4 +4,5 @@ export const selectIsLoading = state => state.cars.isLoading;
 export const selectError = state => state.cars.error;
 export const selectIsModalOpen = state => state.cars.isModalOpen;
 export const selectCar = state => state.cars.modal.car;
-export const selectFavor = state => state.cars.favorite;
+export const selectFavor = state => state.cars.favore;
+export const selectFavorItems = state => state.cars.favorItems;

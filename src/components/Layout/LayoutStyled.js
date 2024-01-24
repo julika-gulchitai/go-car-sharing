@@ -6,6 +6,7 @@ export const StyledHeader = styled.header`
   background: linear-gradient(#0b44cd, #ffe4c4);
   display: flex;
   padding: 20px;
+  padding-right: 40px;
 `;
 export const StyledNav = styled.nav`
   width: 1280px;

@@ -7,14 +7,14 @@ const carsSlice = createSlice({
   initialState: {
     page: 1,
     items: [],
+    favorItems: [],
     modal: {
       car: {},
     },
-
+    favore: false,
     isLoading: false,
     error: '',
     isModalOpen: false,
-    favorite: [],
   },
   reducers: {
     loadMore: (state, { payload }) => {
@@ -26,15 +26,17 @@ const carsSlice = createSlice({
     modalCar: (state, { payload }) => {
       state.modal.car = payload;
     },
-    addToFavorites: (state, { payload }) => {
-      state.favItems.push(payload);
+    addCar: (state, { payload }) => {
+      state.favorItems.push(payload);
       toast.success(
         `${payload.make} ${payload.model} is added to "Favorites"!`
       );
     },
-    removeFromFavorites: (state, { payload }) => {
-      state.favItems = state.favItems.filter(item => item.id !== payload);
-      toast.info(`The car is removed from "Favorites"!`);
+    deleteCar: (state, { payload }) => {
+      state.favorItems = state.favorItems.filter(item => item.id !== payload);
+      toast.info(
+        `T${payload.make} ${payload.model} is removed from "Favorites"!`
+      );
     },
   },
 
@@ -55,5 +57,6 @@ const carsSlice = createSlice({
   },
 });
 
-export const { modalOpen, modalCar, loadMore } = carsSlice.actions;
+export const { modalOpen, modalCar, loadMore, addCar, deleteCar } =
+  carsSlice.actions;
 export const carsReducer = carsSlice.reducer;

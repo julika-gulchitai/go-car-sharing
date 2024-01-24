@@ -6,33 +6,49 @@ import {
   Title,
   Text,
   StyledFavBtn,
+  ButtonBig,
 } from './CatalogStyled';
-import { ButtonLearn } from 'components/Button/ButtonLearn';
-import { modalOpen, modalCar } from '../../redux/carsSlice';
+import { modalOpen, modalCar, deleteCar, addCar } from '../../redux/carsSlice';
 
 import { AiFillHeart } from 'react-icons/ai';
 import { AiOutlineHeart } from 'react-icons/ai';
-import { selectFavor } from '../../redux/selectors';
+import {
+  selectFavor,
+  selectFavorItems,
+  selectIsModalOpen,
+} from '../../redux/selectors';
 
 export const pictCar = 'https://board.mistaua.com/2018/61997_1_2.jpg';
 
 const Car = ({ car }) => {
+  let isModalOpen = useSelector(selectIsModalOpen);
+  const isFavore = useSelector(selectFavor);
   const dispatch = useDispatch();
-  const isFavorite = useSelector(selectFavor);
+  const favoritesCars = useDispatch(selectFavorItems);
+
   const handleClick = car => {
-    dispatch(modalOpen(true));
+    dispatch(modalOpen(!isModalOpen));
+    // dispatch((isModalOpen = true));
     dispatch(modalCar(car));
   };
-  const handleFavoriteClick = {};
+
+  const handleFavorite = car => {
+    const isInFavorItems = favoritesCars.some(fcar => fcar.id === car.id);
+    if (isInFavorItems) {
+      dispatch(deleteCar(car.id));
+    } else {
+      dispatch(addCar(car.id));
+    }
+  };
 
   return (
     <StyledDiv>
       <StyledLi key={car.id}>
         <StyledImg src={car?.img || pictCar} alt={car?.make} />
-        <StyledFavBtn type="button" onClick={handleFavoriteClick}>
-          {(!isFavorite && (
-            <AiOutlineHeart style={{ fill: 'var(--white)' }} />
-          )) || <AiFillHeart style={{ fill: 'var(--button)' }} />}
+        <StyledFavBtn type="button" onClick={handleFavorite(car)}>
+          {(!isFavore && <AiOutlineHeart color="var(--white)" />) || (
+            <AiFillHeart color="var(--button)" />
+          )}
         </StyledFavBtn>
         <Title>
           <p>
@@ -45,7 +61,7 @@ const Car = ({ car }) => {
           {car?.type} | {car?.model} | {car?.accessories[0]}
         </Text>
 
-        <ButtonLearn onClick={handleClick} />
+        <ButtonBig onClick={handleClick}>Learn more </ButtonBig>
       </StyledLi>
     </StyledDiv>
   );

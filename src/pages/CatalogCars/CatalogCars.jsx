@@ -6,7 +6,7 @@ const CatalogCars = () => {
   return (
     <WrapDiv>
       <Catalog />
-      {/* <Modal /> */}
+      <Modal />
     </WrapDiv>
   );
 };

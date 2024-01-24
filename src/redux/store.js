@@ -17,13 +17,15 @@ const persistConfig = {
   key: 'root',
   version: 1,
   storage,
-  blacklist: ['modal', 'page', 'filteredCars'],
+  whitelist: ['modal', 'page', 'filteredCars'],
 };
 
 const persistedReducer = persistReducer(persistConfig, carsReducer);
 
 export const store = configureStore({
-  reducer: persistedReducer,
+  reducer: {
+    cars: persistedReducer,
+  },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
