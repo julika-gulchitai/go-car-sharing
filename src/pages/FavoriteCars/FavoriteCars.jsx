@@ -1,9 +1,13 @@
+import Favorites from '../../components/Favorites/Favorites';
 import Modal from '../../components/Modal/Modal';
+import { WrapDiv } from '../CatalogCars/CatalogCarsStyled';
+
 const FavoriteCars = () => {
   return (
-    <div>
+    <WrapDiv>
+      <Favorites />
       <Modal />
-    </div>
+    </WrapDiv>
   );
 };
 export default FavoriteCars;

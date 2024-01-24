@@ -24,20 +24,20 @@ const Car = ({ car }) => {
   let isModalOpen = useSelector(selectIsModalOpen);
   const isFavore = useSelector(selectFavor);
   const dispatch = useDispatch();
-  const favoritesCars = useDispatch(selectFavorItems);
+  const favoritesCars = useSelector(selectFavorItems);
+  console.log('!!!!!!', isFavore, favoritesCars);
 
   const handleClick = car => {
-    dispatch(modalOpen(!isModalOpen));
-    // dispatch((isModalOpen = true));
+    dispatch(modalOpen(true));
     dispatch(modalCar(car));
   };
 
   const handleFavorite = car => {
-    const isInFavorItems = favoritesCars.some(fcar => fcar.id === car.id);
+    const isInFavorItems = favoritesCars?.some(fcar => fcar.id === car.id);
     if (isInFavorItems) {
       dispatch(deleteCar(car.id));
     } else {
-      dispatch(addCar(car.id));
+      dispatch(addCar(car));
     }
   };
 
@@ -45,11 +45,12 @@ const Car = ({ car }) => {
     <StyledDiv>
       <StyledLi key={car.id}>
         <StyledImg src={car?.img || pictCar} alt={car?.make} />
-        <StyledFavBtn type="button" onClick={handleFavorite(car)}>
-          {(!isFavore && <AiOutlineHeart color="var(--white)" />) || (
+        <StyledFavBtn type="button" onClick={() => handleFavorite(car)}>
+          {(favoritesCars?.some(fcar => fcar.id === car.id) && (
             <AiFillHeart color="var(--button)" />
-          )}
+          )) || <AiOutlineHeart color="var(--white)" />}
         </StyledFavBtn>
+
         <Title>
           <p>
             {car.make} <span>{car.model}</span>, {car.year}
@@ -61,7 +62,15 @@ const Car = ({ car }) => {
           {car?.type} | {car?.model} | {car?.accessories[0]}
         </Text>
 
-        <ButtonBig onClick={handleClick}>Learn more </ButtonBig>
+        <ButtonBig
+          type="button"
+          onClick={() => {
+            dispatch(modalOpen(true));
+            dispatch(modalCar(car));
+          }}
+        >
+          Learn more
+        </ButtonBig>
       </StyledLi>
     </StyledDiv>
   );

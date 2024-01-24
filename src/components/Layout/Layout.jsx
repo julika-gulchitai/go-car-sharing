@@ -7,7 +7,7 @@ import {
   StyledNavLink,
   StyledLogo,
 } from './LayoutStyled';
-import Logo from 'components/Logo/Logo';
+import Logo from '../Logo/Logo';
 
 const Layout = () => {
   return (

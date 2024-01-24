@@ -11,12 +11,7 @@ export const StyledLi = styled.li`
 export const StyledDiv = styled.div`
   display: flex;
 `;
-// export const StyledUl = styled.ul`
-//   display: flex;
 
-//   flex-wrap: wrap;
-//   row-gap: 29px;
-// `;
 export const Wrap = styled.div`
   display: flex;
   flex-wrap: wrap;

@@ -6,13 +6,14 @@ export const StyledModalBackdrop = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  background: var(--accent-descr-text);
+  background: var(--accent-text);
   z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
   width: 100%;
+  backdrop-filter: blur(5px);
 `;
 export const StyledModalForm = styled.form`
   width: 541px;
@@ -49,7 +50,7 @@ export const StyledTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  h2 {
+  /* h2 {
     font-weight: 500;
     font-size: 18px;
     line-height: 1.33;
@@ -59,6 +60,16 @@ export const StyledTextWrapper = styled.div`
     span {
       color: var(--button);
     }
+  } */
+`;
+export const StyledMake = styled.div`
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.33;
+  color: var(--descr-text);
+  margin-bottom: 8px;
+  span {
+    color: var(--button);
   }
 `;
 
@@ -68,9 +79,9 @@ export const StyledModalText = styled.div`
   flex-wrap: wrap;
   gap: 6px;
   font-size: 12px;
-  color: var(--accent-descr-text);
   margin-bottom: 14px;
   line-height: 1.5;
+  color: var(--accent-text);
 `;
 
 export const StyledCharacteristic = styled.p`
@@ -86,6 +97,8 @@ export const StyledAccessories = styled.div`
   align-items: flex-start;
   gap: 8px;
   margin-bottom: 24px;
+  color: var(--accent-text-tr);
+  margin-top: 8px;
 
   h3 {
     font-weight: 500;
@@ -95,13 +108,17 @@ export const StyledAccessories = styled.div`
   }
   p {
     width: 450px;
-    color: var(--accent-descr-text);
-    font-family: 'Manrope Regular';
+    color: var(--accent-text);
     font-size: 12px;
     line-height: 1.5;
   }
 `;
-
+export const StylH = styled.p`
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.33;
+  color: var(--main-text);
+`;
 export const StyledConditionsWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -111,7 +128,6 @@ export const StyledConditionsWrapper = styled.div`
   margin-bottom: 24px;
 
   h3 {
-    font-family: 'Manrope Medium';
     font-size: 14px;
     line-height: 1.43;
     color: var(--descr-text);
@@ -130,13 +146,11 @@ export const StyledConditionsWrapper = styled.div`
     border-radius: 35px;
     background: var(--modal-accent-bg);
     color: var(--modal-accent-text);
-    font-family: 'Manrope Regular';
     font-size: 12px;
     line-height: 1.5;
 
     span {
       color: var(--button);
-      font-family: 'Montserrat Regular';
       font-size: 12px;
       line-height: 1.5;
     }
@@ -154,7 +168,7 @@ export const StyledModalBtn = styled.a`
   background-color: var(--button);
   border: none;
   outline: transparent;
-
+  text-decoration: none;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.43;
@@ -170,10 +184,10 @@ export const StyledRentalConditions = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 35px;
-  background: #f9f9f9;
+  background: var(--modal-accent-bg);
   color: #363535;
   span {
-    color: var(--blue-main);
+    color: var(--button);
   }
 `;
 export const StyledRentalRow = styled.div`

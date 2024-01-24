@@ -16,6 +16,8 @@ import {
   StyledImg,
   StyledRentalRow,
   StyledRentalConditions,
+  StylH,
+  StyledMake,
 } from './ModalStyled';
 import { MdClose } from 'react-icons/md';
 
@@ -23,7 +25,7 @@ const Modal = () => {
   const isModalOpen = useSelector(selectIsModalOpen);
   const dispatch = useDispatch();
   const car = useSelector(selectCar);
-
+  console.log('car', car, isModalOpen);
   const clickBackdrop = e => {
     if (e.target === e.currentTarget) {
       dispatch(modalOpen(false));
@@ -45,7 +47,7 @@ const Modal = () => {
 
   return (
     isModalOpen && (
-      <StyledModalBackdrop open={isModalOpen} onClick={clickBackdrop}>
+      <StyledModalBackdrop onClick={() => clickBackdrop}>
         <StyledModalForm>
           <StyledCloseBtn
             type="button"
@@ -62,10 +64,10 @@ const Modal = () => {
             height={248}
           />
           <StyledTextWrapper>
-            <h2>
+            <StyledMake>
               {car?.make}
               <span> {car?.model}</span>, {car?.year}
-            </h2>
+            </StyledMake>
             <StyledModalText>
               {car?.address.split(',').slice(1).join(' | ')} | Id: {car.id} |
               Year: {car?.year} | Type: {car.type} | Fuel Consumption:{' '}
@@ -74,19 +76,21 @@ const Modal = () => {
 
             <StyledCharacteristic>{car?.description}</StyledCharacteristic>
 
+            <StylH>Accessories and functionalities:</StylH>
             <StyledAccessories>
-              <h3>Accessories and functionalities:</h3>
               <p>{car.functionalities.join(' | ')}</p>
-              <br />
-              <p>{car?.accessories.join(' | ')}</p>
+              <p>{car.accessories.join(' | ')}</p>
             </StyledAccessories>
 
             <StyledConditionsWrapper>
-              <p>Rental Conditions:</p>
+              <StylH>Rental Conditions:</StylH>
 
               <StyledRentalRow>
                 <StyledRentalConditions>
-                  {car?.rentalConditions.split('\n')[0]}
+                  Minimum age:{' '}
+                  <span>
+                    {car?.rentalConditions.split('\n')[0].split(' ')[2]}
+                  </span>
                 </StyledRentalConditions>
                 <StyledRentalConditions>
                   {car?.rentalConditions.split('\n')[1]}
@@ -97,14 +101,17 @@ const Modal = () => {
                   {car.rentalConditions.split('\n')[2]}
                 </StyledRentalConditions>
                 <StyledRentalConditions>
-                  Mileage: <span>{car.mileage}</span>
+                  Mileage: <span>{car?.mileage}</span>
                 </StyledRentalConditions>
                 <StyledRentalConditions>
                   Price: <span>{car.rentalPrice}</span>
                 </StyledRentalConditions>
               </StyledRentalRow>
             </StyledConditionsWrapper>
-            <StyledModalBtn href="tel:+380730000000" onClick={handleClick}>
+            <StyledModalBtn
+              href="tel:+380730000000"
+              onClick={() => handleClick}
+            >
               Rental car
             </StyledModalBtn>
           </StyledTextWrapper>

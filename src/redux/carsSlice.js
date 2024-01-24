@@ -28,15 +28,15 @@ const carsSlice = createSlice({
     },
     addCar: (state, { payload }) => {
       state.favorItems.push(payload);
-      toast.success(
-        `${payload.make} ${payload.model} is added to "Favorites"!`
-      );
+      // toast.success(
+      //   `${payload.make} ${payload.model} is added to "Favorites"!`
+      // );
     },
     deleteCar: (state, { payload }) => {
       state.favorItems = state.favorItems.filter(item => item.id !== payload);
-      toast.info(
-        `T${payload.make} ${payload.model} is removed from "Favorites"!`
-      );
+      // toast.info(
+      //   `T${payload.make} ${payload.model} is removed from "Favorites"!`
+      // );
     },
   },
 

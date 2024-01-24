@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter basename="/go-car-sharing">
         <App />
-        <ToastContainer autoClose={900} />
+        {/* <ToastContainer autoClose={900} /> */}
       </BrowserRouter>
     </PersistGate>
   </Provider>
