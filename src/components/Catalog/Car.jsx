@@ -13,24 +13,14 @@ import { modalOpen, modalCar, deleteCar, addCar } from '../../redux/carsSlice';
 import { AiFillHeart } from 'react-icons/ai';
 import { AiOutlineHeart } from 'react-icons/ai';
 import {
-  selectFavor,
   selectFavorItems,
-  selectIsModalOpen,
 } from '../../redux/selectors';
 
 export const pictCar = 'https://board.mistaua.com/2018/61997_1_2.jpg';
 
 const Car = ({ car }) => {
-  let isModalOpen = useSelector(selectIsModalOpen);
-  const isFavore = useSelector(selectFavor);
   const dispatch = useDispatch();
   const favoritesCars = useSelector(selectFavorItems);
-  console.log('!!!!!!', isFavore, favoritesCars);
-
-  const handleClick = car => {
-    dispatch(modalOpen(true));
-    dispatch(modalCar(car));
-  };
 
   const handleFavorite = car => {
     const isInFavorItems = favoritesCars?.some(fcar => fcar.id === car.id);

@@ -23,9 +23,9 @@ const Layout = () => {
               go car sharing!
             </StyledLogo>
 
-            <StyledNavLink to={'/'}>Home</StyledNavLink>
-            <StyledNavLink to={'/catalog'}>Car Catalog</StyledNavLink>
-            <StyledNavLink to={'/favorites'}>Favorites</StyledNavLink>
+            <StyledNavLink to={'/'}>HOME</StyledNavLink>
+            <StyledNavLink to={'/catalog'}>CAR CATALOG</StyledNavLink>
+            <StyledNavLink to={'/favorites'}>fAVORITES</StyledNavLink>
           </StyledNav>
         </Wrap>
       </StyledHeader>
