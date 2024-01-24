@@ -5,7 +5,7 @@ import Car from '../Catalog/Car';
 
 const Favorites = () => {
   const favoreCars = useSelector(selectFavorItems);
-  console.log('??????', favoreCars);
+
   return (
     <>
       <Wrap>
