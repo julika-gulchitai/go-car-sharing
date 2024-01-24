@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import selectIsModalOpen, { selectCar } from '../../redux/selectors';
+import { selectIsModalOpen, selectCar } from '../../redux/selectors';
 import { modalOpen } from '../../redux/carsSlice';
 import pictCar from '../Catalog/Car';
 import { useEffect } from 'react';
@@ -16,7 +16,7 @@ import {
   StyledImg,
   StyledRentalRow,
   StyledRentalConditions,
-} from './Modal';
+} from './ModalStyled';
 import { MdClose } from 'react-icons/md';
 
 const Modal = () => {
@@ -67,9 +67,9 @@ const Modal = () => {
             <span> {car?.model}</span>, {car?.year}
           </h2>
           <StyledModalText>
-            {car.address.split(',').slice(1).join(' | ')} | Id: {car.id} | Year:{' '}
-            {car.year} | Type: {car.type} | Fuel Consumption:{' '}
-            {car.fuelConsumption} | Engine Size: {car.engineSize}
+            {car?.address.split(',').slice(1).join(' | ')} | Id: {car.id} |
+            Year: {car?.year} | Type: {car.type} | Fuel Consumption:{' '}
+            {car?.fuelConsumption} | Engine Size: {car.engineSize}
           </StyledModalText>
 
           <StyledCharacteristic>{car?.description}</StyledCharacteristic>
@@ -78,7 +78,7 @@ const Modal = () => {
             <h3>Accessories and functionalities:</h3>
             <p>{car.functionalities.join(' | ')}</p>
             <br />
-            <p>{car.accessories.join(' | ')}</p>
+            <p>{car?.accessories.join(' | ')}</p>
           </StyledAccessories>
 
           <StyledConditionsWrapper>
@@ -86,10 +86,10 @@ const Modal = () => {
 
             <StyledRentalRow>
               <StyledRentalConditions>
-                {car.rentalConditions.split('\n')[0]}
+                {car?.rentalConditions.split('\n')[0]}
               </StyledRentalConditions>
               <StyledRentalConditions>
-                {car.rentalConditions.split('\n')[1]}
+                {car?.rentalConditions.split('\n')[1]}
               </StyledRentalConditions>
             </StyledRentalRow>
             <StyledRentalRow>

@@ -5,4 +5,5 @@ export const WrapDiv = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  padding: 20px 0;
 `;

@@ -12,18 +12,16 @@ import Car from './Car';
 import { loadMore } from '../../redux/carsSlice';
 
 const Catalog = () => {
-  const dispatch = useDispatch();
   let page = useSelector(selectPage);
   console.log(page);
   const cars = useSelector(selectCars);
   console.log(cars);
   const isLoading = useSelector(selectIsLoading);
   const isError = useSelector(selectError);
-
+  const dispatch = useDispatch();
   const hanleLoadMore = () => {
-    dispatch(loadMore(page + 1));
+    dispatch(loadMore());
   };
-  const totalPage = Math.floor(cars.length / 12);
 
   useEffect(() => {
     if (cars.length === 0) {
@@ -32,7 +30,7 @@ const Catalog = () => {
   }, [cars, cars.length, dispatch]);
 
   useEffect(() => {
-    if (page !== 1) dispatch(getAllCarsThunk(page));
+    if (page > 1) dispatch(getAllCarsThunk(page));
   }, [dispatch, page]);
 
   return (
@@ -41,13 +39,13 @@ const Catalog = () => {
         {cars?.map(car => {
           return <Car key={car.id} car={car} />;
         })}
-        {totalPage > page && (
+        {page < 3 && (
           <ButtonMore type="button" onClick={hanleLoadMore}>
             Load more
           </ButtonMore>
         )}
-        {isLoading && <h2>Loading...</h2>}
-        {isError && <h2>Error</h2>}
+        {isLoading && <h2 color={'var(accent-filter-text)'}>Loading...</h2>}
+        {/*  {isError && <h2>Error</h2>} */}
       </Wrap>
     </>
   );

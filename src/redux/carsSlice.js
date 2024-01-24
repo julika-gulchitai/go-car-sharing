@@ -5,19 +5,20 @@ import { toast } from 'react-toastify';
 const carsSlice = createSlice({
   name: 'cars',
   initialState: {
+    page: 1,
     items: [],
     modal: {
       car: {},
     },
-    page: 1,
+
     isLoading: false,
+    error: '',
     isModalOpen: false,
     favorite: [],
-    error: '',
   },
   reducers: {
     loadMore: (state, { payload }) => {
-      state.page = payload;
+      state.page += 1;
     },
     modalOpen: (state, { payload }) => {
       state.isModalOpen = payload;
@@ -43,10 +44,9 @@ const carsSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(getAllCarsThunk.fulfilled, (state, action) => {
-        state.items = action.payload;
+        state.items.push(...action.payload);
         console.log(state.items);
         state.isLoading = false;
-        state.error = '';
       })
       .addCase(getAllCarsThunk.rejected, (state, action) => {
         state.isLoading = false;

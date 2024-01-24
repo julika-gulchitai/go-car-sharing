@@ -72,13 +72,16 @@ export const Text = styled.p`
 export const ButtonMore = styled.button`
   color: var(--button);
   background: var(--white);
+  margin-top: 80px;
   border: 0;
   font-size: 16px;
   font-weight: 500;
   text-decoration-line: underline;
   cursor: pointer;
-  &:hover {
+  &:active,
+  :focus {
     color: var(--accent-button);
+    background-color: var(--white);
   }
 `;
 export const StyledFavBtn = styled.button`
