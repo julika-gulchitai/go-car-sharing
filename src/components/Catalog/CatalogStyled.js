@@ -23,13 +23,12 @@ export const Wrap = styled.div`
 export const Sorry = styled.p`
   font-size: 25px;
   margin: 50px auto;
-  color: #800000;
+  color: var(--descr-text);
 `;
 export const StyledImg = styled.img`
   height: 268px;
   width: 274px;
   object-fit: cover;
-  /* z-index: -1; */
   border-radius: 12px;
   border: 0;
   margin-bottom: 12px;
@@ -38,17 +37,16 @@ export const StyledImg = styled.img`
       rgba(18, 20, 23, 0.5) 2.5%,
       rgba(18, 20, 23, 0) 41.07%
     ),
-    url(<path-to-image>), lightgray 50% / cover no-repeat;
+    url(), lightgray 50% / cover no-repeat;
 `;
 export const Title = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 8px;
-  /* font-family: Manrope; */
   font-size: 16px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.5;
   & span {
     color: var(--button);

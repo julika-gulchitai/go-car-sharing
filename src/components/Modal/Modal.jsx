@@ -25,12 +25,13 @@ const Modal = () => {
   const isModalOpen = useSelector(selectIsModalOpen);
   const dispatch = useDispatch();
   const car = useSelector(selectCar);
-  console.log('car', car, isModalOpen);
+
   const clickBackdrop = e => {
     if (e.target === e.currentTarget) {
       dispatch(modalOpen(false));
     }
   };
+
   useEffect(() => {
     const handleKeyDown = e => {
       if (e.key === 'Escape') {
@@ -47,7 +48,7 @@ const Modal = () => {
 
   return (
     isModalOpen && (
-      <StyledModalBackdrop onClick={() => clickBackdrop}>
+      <StyledModalBackdrop onClick={clickBackdrop}>
         <StyledModalForm>
           <StyledCloseBtn
             type="button"

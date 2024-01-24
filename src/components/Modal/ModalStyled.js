@@ -21,7 +21,6 @@ export const StyledModalForm = styled.form`
   background-color: var(--white);
   border-radius: 24px;
   position: relative;
-  /* z-index: -2; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -50,20 +49,9 @@ export const StyledTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* h2 {
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 1.33;
-    color: var(--descr-text);
-    margin-bottom: 8px;
-
-    span {
-      color: var(--button);
-    }
-  } */
 `;
 export const StyledMake = styled.div`
-  font-weight: 700;
+  font-weight: 500;
   font-size: 18px;
   line-height: 1.33;
   color: var(--descr-text);
@@ -114,7 +102,7 @@ export const StyledAccessories = styled.div`
   }
 `;
 export const StylH = styled.p`
-  font-weight: 700;
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.33;
   color: var(--main-text);
