@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/go-car-sharing/static/css/main.7acaea2f.css",
-    "main.js": "/go-car-sharing/static/js/main.07d3183d.js",
+    "main.css": "/go-car-sharing/static/css/main.f853cdaa.css",
+    "main.js": "/go-car-sharing/static/js/main.a4fb753e.js",
+    "static/media/carIcon.svg": "/go-car-sharing/static/media/carIcon.ad9548068524f7c6ce214d57e0df59dc.svg",
     "index.html": "/go-car-sharing/index.html",
-    "main.7acaea2f.css.map": "/go-car-sharing/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/go-car-sharing/static/js/main.07d3183d.js.map"
+    "main.f853cdaa.css.map": "/go-car-sharing/static/css/main.f853cdaa.css.map",
+    "main.a4fb753e.js.map": "/go-car-sharing/static/js/main.a4fb753e.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/css/main.f853cdaa.css",
+    "static/js/main.a4fb753e.js"
   ]
 }
