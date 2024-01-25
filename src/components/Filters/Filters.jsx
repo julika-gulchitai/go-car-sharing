@@ -11,11 +11,7 @@ import {
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { useDispatch, useSelector } from 'react-redux';
 import Select, { components } from 'react-select';
-import {
-  selectCars,
-  selectFilters,
-  selectOptions,
-} from '../../redux/selectors';
+import { selectCars, selectFilters } from '../../redux/selectors';
 import { useState } from 'react';
 
 const Filters = () => {
@@ -123,9 +119,9 @@ const Filters = () => {
         </StyledSelect>
       </FormFilter>
 
-      {carFiltered?.length === 0 && (
+      {/* {carFiltered?.length === 0 && (
         <Sorry>No cars matching your filter request</Sorry>
-      )}
+      )} */}
     </WrapFilters>
   );
 };

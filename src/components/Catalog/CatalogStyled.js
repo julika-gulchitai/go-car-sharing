@@ -96,8 +96,8 @@ export const ButtonBig = styled.button`
 export const ButtonSearch = styled.button`
   display: flex;
   display: flex;
-padding: 14px 44px;
- color: var(--white)
+  padding: 14px 44px;
+  color: var(--white);
   justify-content: center;
   align-items: center;
   flex-shrink: 0;

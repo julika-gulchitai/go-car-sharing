@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const WrapFilters = styled.section`
-  paddinf: 20px;
+  padding: 20px;
   justify-content: center;
 `;
 
