@@ -54,7 +54,7 @@ export const StyledMake = styled.div`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.33;
-  color: var(--descr-text);
+  color: var(--main-text);
   margin-bottom: 8px;
   span {
     color: var(--button);
@@ -69,13 +69,13 @@ export const StyledModalText = styled.div`
   font-size: 12px;
   margin-bottom: 14px;
   line-height: 1.5;
-  color: var(--accent-text);
+  color: var(--main-text);
 `;
 
 export const StyledCharacteristic = styled.p`
   font-size: 14px;
   line-height: 1.4;
-  color: var(--descr-text);
+  color: var(--main-text);
   margin-bottom: 24px;
 `;
 

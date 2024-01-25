@@ -38,6 +38,7 @@ export const Title = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: 1.5;
+  color: var(--main-text);
   & span {
     color: var(--button);
   }
