@@ -87,7 +87,7 @@ const Filters = () => {
             }))}
             placeholder="Enter the text"
             styles={libStyle}
-            onChange={option => dispatch(selectOptions(option?.value))}
+            onChange={option => dispatch(selectOptions(option.value))}
             components={{
               DropdownIndicator,
               IndicatorSeparator: () => null,
@@ -104,7 +104,7 @@ const Filters = () => {
             placeholder="To $"
             name="rentalPrice"
             styles={libStyle}
-            onChange={option => dispatch(selectOptions(option?.value))}
+            onChange={option => dispatch(selectOptions(option.value))}
             components={{
               DropdownIndicator,
               IndicatorSeparator: () => null,
