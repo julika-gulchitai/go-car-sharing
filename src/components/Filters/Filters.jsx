@@ -41,8 +41,8 @@ const Filters = () => {
   const [fromMile, setFromMile] = useState(null);
   const [toMile, setToMile] = useState(null);
 
+  console.log(make, price, fromMile, toMile);
   const carMake = [...new Set(cars?.map(car => car?.make))].sort();
-
   const carPrice = [...new Set(cars?.map(car => car?.rentalPrice))].sort(
     (a, b) => a - b
   );
@@ -109,7 +109,6 @@ const Filters = () => {
           </StyledFilterInput>
         </StyledSelect>
       </FormFilter>
-
     </WrapFilters>
   );
 };
