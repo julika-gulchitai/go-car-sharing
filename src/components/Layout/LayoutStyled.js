@@ -33,7 +33,7 @@ export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   font-weight: 700;
   padding: 10px 20px;
-  &:activ {
+  &:active {
     color: var(--white);
   }
 `;
