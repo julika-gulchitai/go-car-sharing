@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getAllCarsThunk } from './operations';
+import { toast } from 'react-toastify';
 
 const carsSlice = createSlice({
   name: 'cars',
@@ -48,7 +49,7 @@ const carsSlice = createSlice({
       })
       .addCase(getAllCarsThunk.fulfilled, (state, action) => {
         state.items.push(...action.payload);
-
+        toast.error(`Error loading data`);
         state.isLoading = false;
       })
       .addCase(getAllCarsThunk.rejected, (state, action) => {
