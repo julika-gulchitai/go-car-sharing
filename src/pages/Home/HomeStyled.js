@@ -10,8 +10,8 @@ export const StyledDiv = styled.div`
   margin: 0 auto;
   width: 1280px;
   text-align: start;
-  line-height: '2.5';
-  font-weight: '600';
+  line-height: 2.5;
+  font-weight: 600;
   font-size: 18px;
   height: 100vw;
   padding: 50px;
