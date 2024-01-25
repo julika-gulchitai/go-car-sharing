@@ -48,7 +48,7 @@ const carsSlice = createSlice({
       })
       .addCase(getAllCarsThunk.fulfilled, (state, action) => {
         state.items.push(...action.payload);
-        console.log(state.items);
+
         state.isLoading = false;
       })
       .addCase(getAllCarsThunk.rejected, (state, action) => {

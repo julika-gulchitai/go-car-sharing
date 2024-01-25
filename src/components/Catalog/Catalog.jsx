@@ -9,9 +9,9 @@ import { Loader } from '../Loader/Loader';
 
 const Catalog = () => {
   let page = useSelector(selectPage);
-  console.log(page);
+ 
   const cars = useSelector(selectCars);
-  console.log(cars);
+
   const isLoading = useSelector(selectIsLoading);
 
   const dispatch = useDispatch();
@@ -42,7 +42,7 @@ const Catalog = () => {
           </ButtonMore>
         )}
         {isLoading && <Loader />}
-        {/*  {isError && <h2>Error</h2>} */}
+    
       </Wrap>
     </>
   );

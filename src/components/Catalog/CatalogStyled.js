@@ -28,12 +28,6 @@ export const StyledImg = styled.img`
   border-radius: 12px;
   border: 0;
   margin-bottom: 12px;
-  background: linear-gradient(
-      180deg,
-      rgba(18, 20, 23, 0.5) 2.5%,
-      rgba(18, 20, 23, 0) 41.07%
-    ),
-    url(), lightgray 50% / cover no-repeat;
 `;
 export const Title = styled.div`
   display: flex;

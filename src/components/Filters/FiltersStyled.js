@@ -145,5 +145,6 @@ export const Sorry = styled.h2`
   margin-top: 50px;
   font-size: 16px;
   line-height: 1.5;
+  margin-bottom: 20px;
   color: var(--black-filter);
 `;
