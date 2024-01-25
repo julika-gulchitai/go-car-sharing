@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import FavoriteCars from '../pages/FavoriteCars/FavoriteCars';
 import Home from '../pages/Home/Home';
 import Layout from './Layout/Layout';
-import NotFound from '../pages/NotFound';
+import NotFound from '../pages/NotFound/NotFound';
 import CatalogCars from '../pages/CatalogCars/CatalogCars';
 
 const App = () => {

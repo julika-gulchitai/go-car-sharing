@@ -1,15 +1,11 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllCarsThunk } from '../../redux/operations';
-import {
-  selectCars,
-  selectError,
-  selectIsLoading,
-  selectPage,
-} from '../../redux/selectors';
+import { selectCars, selectIsLoading, selectPage } from '../../redux/selectors';
 import { Wrap, ButtonMore } from './CatalogStyled';
 import Car from './Car';
 import { loadMore } from '../../redux/carsSlice';
+import { Loader } from '../Loader/Loader';
 
 const Catalog = () => {
   let page = useSelector(selectPage);
@@ -17,8 +13,9 @@ const Catalog = () => {
   const cars = useSelector(selectCars);
   console.log(cars);
   const isLoading = useSelector(selectIsLoading);
-  const isError = useSelector(selectError);
+
   const dispatch = useDispatch();
+
   const hanleLoadMore = () => {
     dispatch(loadMore());
   };
@@ -44,7 +41,7 @@ const Catalog = () => {
             Load more
           </ButtonMore>
         )}
-        {isLoading && <h2 color={'var(accent-filter-text)'}>Loading...</h2>}
+        {isLoading && <Loader />}
         {/*  {isError && <h2>Error</h2>} */}
       </Wrap>
     </>

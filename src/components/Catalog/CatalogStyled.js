@@ -20,11 +20,7 @@ export const Wrap = styled.div`
   justify-content: center;
   align-items: center;
 `;
-export const Sorry = styled.p`
-  font-size: 25px;
-  margin: 50px auto;
-  color: var(--descr-text);
-`;
+
 export const StyledImg = styled.img`
   height: 268px;
   width: 274px;
@@ -91,7 +87,6 @@ export const ButtonBig = styled.button`
   display: flex;
   width: 274px;
   height: 44px;
-  /* padding: 12px 99px; */
   justify-content: center;
   align-items: center;
   flex-shrink: 0;

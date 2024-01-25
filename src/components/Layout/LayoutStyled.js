@@ -21,7 +21,6 @@ export const Wrap = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  /* font-family: Manrope; */
   font-size: 25px;
   font-style: normal;
   color: #01796f;
