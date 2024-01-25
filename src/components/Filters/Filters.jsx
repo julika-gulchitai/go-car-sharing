@@ -11,7 +11,11 @@ import {
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import { useDispatch, useSelector } from 'react-redux';
 import Select, { components } from 'react-select';
-import { selectCars, selectFilters, selectSelect } from '../../redux/selectors';
+import {
+  selectCars,
+  selectFilters,
+  selectOptions,
+} from '../../redux/selectors';
 import { useState } from 'react';
 
 const Filters = () => {
@@ -83,7 +87,7 @@ const Filters = () => {
             }))}
             placeholder="Enter the text"
             styles={libStyle}
-            onChange={options => dispatch(selectSelect(options?.value))}
+            onChange={options => dispatch(selectOptions(options?.value))}
             components={{
               DropdownIndicator,
               IndicatorSeparator: () => null,
@@ -100,7 +104,7 @@ const Filters = () => {
             placeholder="To $"
             name="rentalPrice"
             styles={libStyle}
-            onChange={options => dispatch(selectSelect(options?.value))}
+            onChange={options => dispatch(selectOptions(options?.value))}
             components={{
               DropdownIndicator,
               IndicatorSeparator: () => null,

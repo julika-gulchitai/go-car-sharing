@@ -7,4 +7,4 @@ export const selectCar = state => state.cars.modal.car;
 export const selectFavor = state => state.cars.favore;
 export const selectFavorItems = state => state.cars.favorItems;
 export const selectFilters = state => state.cars.filters;
-export const selectSelect = state => state.cars.select;
+export const selectOptions = state => state.cars.select;
