@@ -5,7 +5,6 @@ import {
   StyledFilterInput,
   StyledFromInput,
   StyledToInput,
-  Sorry,
   libStyle,
 } from './FiltersStyled';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
@@ -42,9 +41,6 @@ const Filters = () => {
   const [fromMile, setFromMile] = useState(null);
   const [toMile, setToMile] = useState(null);
 
-  //   const choseSelect = option => {
-  //     dispatch(selectSelect(option?.value));
-  //   };
   const carMake = [...new Set(cars?.map(car => car?.make))].sort();
 
   const carPrice = [...new Set(cars?.map(car => car?.rentalPrice))].sort(
@@ -64,11 +60,6 @@ const Filters = () => {
 
     dispatch(selectFilters({ fromMileage, toMileage, carMake, rentalPrice }));
   };
-  const carFiltered = cars
-    .filter(item => (make ? item.make === make : true))
-    .filter(item => (price ? item.rentalPrice === price : true))
-    .filter(item => (fromMile ? item.mileage >= fromMile : true))
-    .filter(item => (toMile ? item.mileage <= toMile : true));
 
   return (
     <WrapFilters>
@@ -91,7 +82,7 @@ const Filters = () => {
           />
         </StyledSelect>
         <StyledSelect>
-          <label htmlFor="rentalPrice">Price/ 1 hour</label>
+          <label htmlFor="rentalPrice">Price/1 hour</label>
           <Select
             options={carPrice.map(price => ({
               value: price,
@@ -108,7 +99,7 @@ const Filters = () => {
           />
         </StyledSelect>
         <StyledSelect>
-          <label>Сar mileage / km</label>
+          <label>Сar mileage/km</label>
 
           <StyledFilterInput>
             <StyledFromInput type="number" placeholder="From" name="from" />
@@ -119,9 +110,6 @@ const Filters = () => {
         </StyledSelect>
       </FormFilter>
 
-      {/* {carFiltered?.length === 0 && (
-        <Sorry>No cars matching your filter request</Sorry>
-      )} */}
     </WrapFilters>
   );
 };

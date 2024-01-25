@@ -13,7 +13,6 @@ const carsSlice = createSlice({
     },
     favore: false,
     isLoading: false,
-    error: '',
     isModalOpen: false,
     filters: {},
     select: '',
