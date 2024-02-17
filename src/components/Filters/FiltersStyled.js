@@ -24,12 +24,12 @@ export const libStyle = {
   }),
   singleValue: styles => ({
     ...styles,
-    color: 'var(--accent-filter-text)',
+    color: 'var(--filter-dropdown-text)',
     fontSize: '18px',
   }),
   placeholder: styles => ({
     ...styles,
-    color: 'var(--accent-filter-text)',
+    color: 'var(--filter-dropdown-text)',
     fontSize: '18px',
   }),
   menu: styles => ({
@@ -37,7 +37,7 @@ export const libStyle = {
     borderRadius: '14px',
     backgroundColor: 'var(--white)',
     overflow: 'hidden',
-    color: 'var(--accent-filter-text)',
+    color: 'var(--filter-dropdown-text)',
     fontSize: '16px',
 
     '&::before': {

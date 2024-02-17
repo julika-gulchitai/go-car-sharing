@@ -45,6 +45,9 @@ const Modal = () => {
   const handleClick = () => {
     dispatch(modalOpen(false));
   };
+  function formatNumber(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
 
   return (
     isModalOpen && (
@@ -102,7 +105,7 @@ const Modal = () => {
                   {car.rentalConditions.split('\n')[2]}
                 </StyledRentalConditions>
                 <StyledRentalConditions>
-                  Mileage: <span>{car?.mileage}</span>
+                  Mileage: <span>{formatNumber(car.mileage)}</span>
                 </StyledRentalConditions>
                 <StyledRentalConditions>
                   Price: <span>{car.rentalPrice}</span>
