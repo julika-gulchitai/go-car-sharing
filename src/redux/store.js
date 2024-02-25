@@ -17,7 +17,7 @@ const persistConfig = {
   key: 'root',
   version: 1,
   storage,
-  whitelist: ['modal', 'page', 'filteredCars'],
+  blacklist: ['modal', 'page', 'filteredCars'],
 };
 
 const persistedReducer = persistReducer(persistConfig, carsReducer);
