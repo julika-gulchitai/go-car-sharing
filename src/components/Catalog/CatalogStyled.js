@@ -7,6 +7,7 @@ export const StyledLi = styled.li`
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  list-style-type: none;
 `;
 export const StyledDiv = styled.div`
   display: flex;
