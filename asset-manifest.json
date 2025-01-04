@@ -1,14 +1,26 @@
 {
   "files": {
-    "main.css": "/go-car-sharing/static/css/main.a2446170.css",
-    "main.js": "/go-car-sharing/static/js/main.958adab0.js",
+    "main.css": "/go-car-sharing/static/css/main.8c3dea38.css",
+    "main.js": "/go-car-sharing/static/js/main.f57e29ab.js",
+    "static/media/car.webp": "/go-car-sharing/static/media/car.21ae22033853ad1aae15.webp",
+    "static/media/audi.webp": "/go-car-sharing/static/media/audi.38fd35df1c1f1a3f658c.webp",
+    "static/media/mazda.webp": "/go-car-sharing/static/media/mazda.58d071702c4766db4215.webp",
+    "static/media/honda.webp": "/go-car-sharing/static/media/honda.99069b297817c3bc6b9e.webp",
+    "static/media/mg.webp": "/go-car-sharing/static/media/mg.8afade5151f8cdfe8106.webp",
+    "static/media/bmw.webp": "/go-car-sharing/static/media/bmw.525e23108bd5b2804b22.webp",
+    "static/media/daewoo.webp": "/go-car-sharing/static/media/daewoo.fb4fe0a2dda7737b51de.webp",
+    "static/media/volvo.webp": "/go-car-sharing/static/media/volvo.8053753fb9a578058505.webp",
+    "static/media/buick.webp": "/go-car-sharing/static/media/buick.249810a3e1e77eef7fae.webp",
+    "static/media/mitsubishi.webp": "/go-car-sharing/static/media/mitsubishi.e2123f186fa866c6efe4.webp",
+    "static/media/lincoln.webp": "/go-car-sharing/static/media/lincoln.39381bb8fa73b5e9c9ef.webp",
+    "static/media/nissan.webp": "/go-car-sharing/static/media/nissan.f4c90cbc7486afc91647.webp",
     "static/media/carIcon.svg": "/go-car-sharing/static/media/carIcon.ad9548068524f7c6ce214d57e0df59dc.svg",
     "index.html": "/go-car-sharing/index.html",
-    "main.a2446170.css.map": "/go-car-sharing/static/css/main.a2446170.css.map",
-    "main.958adab0.js.map": "/go-car-sharing/static/js/main.958adab0.js.map"
+    "main.8c3dea38.css.map": "/go-car-sharing/static/css/main.8c3dea38.css.map",
+    "main.f57e29ab.js.map": "/go-car-sharing/static/js/main.f57e29ab.js.map"
   },
   "entrypoints": [
-    "static/css/main.a2446170.css",
-    "static/js/main.958adab0.js"
+    "static/css/main.8c3dea38.css",
+    "static/js/main.f57e29ab.js"
   ]
 }
